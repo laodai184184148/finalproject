@@ -1,0 +1,240 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "Final project API docs\n",
+        "version": "1.0.0",
+        "title": "Bách Hóa Tổng Hợp"
+    },
+    "servers": [
+        {
+            "description": "Bách Hóa Tổng Hợp",
+            "url": "localhost:3003"
+        }
+    ],
+    "tags": [
+        {
+            "name": "admin",
+            "description": "API docs for admin "
+        },
+        {
+            "name": "user",
+            "description": "API docs for basic user"
+        }
+    ],
+    "paths": {
+        "/admin": {
+            "get": {
+                "tags": [
+                    "admin"
+                ],
+                "summary": "Get admin page",
+                "Vary": "Origin",
+                "responses": {
+                    "200": {
+                        "description": "Request for admin page success"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "models": {
+            "user": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "date"
+                    },
+                    "profile": {
+                        "type": "object",
+                        "properties": {
+                            "fullname": {
+                                "type": "string"
+                            },
+                            "gender": {
+                                "type": "string"
+                            },
+                            "phonenumber": {
+                                "type": "string"
+                            },
+                            "des": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "product": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "required": true,
+                        "Text": true
+                    },
+                    "imageURL": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "category": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "price": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "rating": {
+                        "type": "number"
+                    },
+                    "brand": {
+                        "type": "string"
+                    },
+                    "ingredient": {
+                        "type": "string"
+                    },
+                    "volume_weight": {
+                        "type": "string"
+                    },
+                    "alcohol": {
+                        "type": "string"
+                    },
+                    "special": {
+                        "type": "string"
+                    },
+                    "madein": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "congdung": {
+                        "type": "string"
+                    },
+                    "lieudung": {
+                        "type": "string"
+                    },
+                    "careful": {
+                        "type": "string"
+                    },
+                    "huongdan": {
+                        "type": "string"
+                    },
+                    "doituong": {
+                        "type": "string"
+                    },
+                    "dodam": {
+                        "type": "string"
+                    }
+                }
+            },
+            "order": {
+                "type": "object",
+                "properties": {
+                    "cusdetails": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "phonenumber": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "shippingdeatils": {
+                        "type": "object",
+                        "properties": {
+                            "city": {
+                                "type": "string"
+                            },
+                            "district": {
+                                "type": "string"
+                            },
+                            "sub_district": {
+                                "type": "string"
+                            },
+                            "street": {
+                                "type": "string"
+                            },
+                            "houseNumber": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "shippingTime": {
+                        "type": "object",
+                        "properties": {
+                            "date": {
+                                "type": "string"
+                            },
+                            "hour": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "totalItems": {
+                        "type": "number"
+                    },
+                    "totalPrice": {
+                        "type": "number"
+                    },
+                    "payment_status": {
+                        "type": "number"
+                    },
+                    "del_status": {
+                        "type": "number"
+                    },
+                    "payment_method": {
+                        "type": "number"
+                    },
+                    "create_date": {
+                        "type": "date"
+                    }
+                }
+            },
+            "cart": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "properties": {
+                            "item": {
+                                "type": "object"
+                            },
+                            "quantity": {
+                                "type": "number"
+                            },
+                            "price": {
+                                "type": "number"
+                            }
+                        },
+                        "totalItems": {
+                            "type": "number"
+                        },
+                        "totalPrice": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
